@@ -88,6 +88,8 @@ initramfs, or
 
 Here is the output of the bootchart of a system running an http-server:
 (build with ./buildinitramfs.sh httpd)
+
 ![bootchart](bootlog.png)
-Note that the limiting factor is not starting the web server, waiting for
+
+Note that the limiting factor is not starting the web server, but waiting for
 the network interface to get started and running the dhcp client.
