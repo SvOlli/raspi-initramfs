@@ -1,0 +1,24 @@
+#!/bin/sh
+
+mnt()
+{
+   mkdir -p "${3}"
+   chmod a= "${3}"
+   mount -t "${1}" "${2}" "${3}"
+}
+
+mnt proc proc /proc
+mnt sysfs sysfs /sys
+mnt tmpfs tmpfs /tmp
+mnt devpts devpts /dev/pts
+
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+hostname initramfs
+
+for s in /etc/init.d/S* ; do
+   if [ -x "${s}" ]; then
+      ${s} start
+   fi
+done

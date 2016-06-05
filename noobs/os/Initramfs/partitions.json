@@ -1,0 +1,12 @@
+{
+ "partitions" : [
+  {
+   "filesystem_type" : "FAT",
+   "label" : "boot",
+   "partition_size_nominal" : 64,
+   "tarball" : "http://downloads.raspberrypi.org/raspbian/boot.tar.xz",
+   "uncompressed_tarball_size" : 21,
+   "want_maximised" : false
+  }
+ ]
+}

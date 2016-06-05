@@ -1,0 +1,2 @@
+alias ls='ls --color'
+bootpart() { echo $1 > /sys/module/bcm270?/parameters/reboot_part ; reboot ; }

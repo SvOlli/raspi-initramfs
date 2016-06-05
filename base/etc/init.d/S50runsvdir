@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ARGS=''
+SVDIR="/etc/sv"
+
+if [ -d "${SVDIR}" ]; then
+   runsvdir ${ARGS} "${SVDIR}" &
+fi
+

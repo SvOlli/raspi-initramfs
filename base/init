@@ -1,0 +1,12 @@
+#!/bin/busybox sh
+
+/bin/busybox mkdir -p /bin /sbin /usr/bin /usr/sbin /var/log /mnt
+/bin/busybox --install -s
+
+/usr/bin/chvt 2
+/usr/bin/chvt 1
+
+#exec /sbin/init
+
+export bootchart_init=/sbin/init
+exec /sbin/bootchartd
