@@ -2,4 +2,3 @@ root
 initrd
 src/busybox
 base/bin/busybox
-bootlog.png
