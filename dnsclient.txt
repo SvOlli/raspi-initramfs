@@ -1,0 +1,7 @@
+/lib/arm-linux-gnueabihf/libnss_files.so.2
+/lib/arm-linux-gnueabihf/libnss_dns.so.2
+/lib/arm-linux-gnueabihf/libnss_files-2.19.so
+/lib/arm-linux-gnueabihf/libnss_dns-2.19.so
+/etc/host.conf
+/etc/hosts
+/etc/nsswitch.conf

@@ -1,0 +1,2 @@
+/usr/lib/mime/packages/links
+/usr/bin/links
