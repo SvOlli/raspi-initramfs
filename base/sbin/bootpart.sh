@@ -5,6 +5,7 @@ bootpart="${1}"
 
 if [ -z "${bootpart}" ]; then
    echo "usage: $0 <partitionnumber>"
+   echo suggested are: $(blkid|grep '/dev/mmcblk0p.*TYPE="vfat"'|cut -f1 -d:|sed 's,/dev/mmcblk0p,,'|sort -n)
    exit 0
 fi
 echo "${bootpart}" > "${magicfile}"
