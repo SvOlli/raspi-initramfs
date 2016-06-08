@@ -36,7 +36,10 @@ getlibs()
    echo "${f}"
    file "${f}" | grep -q dynamically || return
    ldd "${f}" | tr ' ' '\n' | tr -d '\t' | grep ^/ | while read lib; do
-      followlinks "${lib}"
+      case "${lib}" in
+      */libfakeroot/*) ;; # fakeroot adds a shared library we don't need
+      *) followlinks "${lib}" ;;
+      esac
    done
 }
 
@@ -45,7 +48,11 @@ copy_to_target()
    local src="${1}"
    if [ -d "${src}" ]; then
       echo "*** processing directory ${src}"
-     tar -cf - -C "${src}" . | tar -xvvf - -C "${cpioroot}"
+      case "${src}" in
+      /*) tar -cf - -C / "${src}" | tar -xvvf - -C "${cpioroot}" ;;
+      *) tar -cf - -C "${src}" . --exclude='README*' |
+         tar -xvvf - -C "${cpioroot}" ;;
+      esac
    elif [ -f "${src}" ]; then
       echo "*** processing filelist ${src}"
      tar -cf - -C / -T "${src}" | tar -xvvf - -C "${cpioroot}"
