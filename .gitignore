@@ -1,4 +1,8 @@
 root
 initrd
 src/busybox
+src/dropbear
 base/bin/busybox
+dropbear/etc/dropbear/dropbear_dss_host_key
+dropbear/etc/dropbear/dropbear_ecdsa_host_key
+dropbear/etc/dropbear/dropbear_rsa_host_key

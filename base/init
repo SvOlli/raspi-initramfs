@@ -1,6 +1,6 @@
 #!/bin/busybox sh
 
-/bin/busybox mkdir -p /bin /sbin /usr/bin /usr/sbin /var/log /mnt
+/bin/busybox mkdir -p /bin /sbin /usr/bin /usr/sbin /mnt /var/log /var/run /root
 /bin/busybox --install -s
 
 /usr/bin/chvt 2

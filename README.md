@@ -87,7 +87,7 @@ initramfs, or
 ===========
 
 Here is the output of the bootchart of a system running an http-server:
-(build with ./buildinitramfs.sh httpd)
+(build with `./buildinitramfs.sh httpd dnsclient.txt dropbear`)
 
 ![bootchart](bootlog.png)
 

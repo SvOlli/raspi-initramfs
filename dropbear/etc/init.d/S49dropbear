@@ -1,0 +1,7 @@
+#!/bin/sh
+
+ln -s ../bin/dropbearmulti /usr/sbin/dropbear
+
+for i in scp ssh dbclient dropbearconvert dropbearkey; do
+   ln -s dropbearmulti /usr/bin/${i}
+done
